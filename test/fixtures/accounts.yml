@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fine: 1
+  leaves: 1
+  last_month_adjustment: MyString
+  resident: one
+
+two:
+  fine: 1
+  leaves: 1
+  last_month_adjustment: MyString
+  resident: two

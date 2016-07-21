@@ -1,0 +1,47 @@
+<%= form_for(rate_card) do |f| %>
+  <% if rate_card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rate_card.errors.count, "error") %> prohibited this rate_card from being saved:</h2>
+
+      <ul>
+      <% rate_card.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :daily_diet %>
+    <%= f.text_field :daily_diet %>
+  </div>
+
+  <div class="field">
+    <%= f.label :establishment_charge %>
+    <%= f.text_field :establishment_charge %>
+  </div>
+
+  <div class="field">
+    <%= f.label :maintenance_charge %>
+    <%= f.text_field :maintenance_charge %>
+  </div>
+
+  <div class="field">
+    <%= f.label :staff_welfare_charge %>
+    <%= f.text_field :staff_welfare_charge %>
+  </div>
+
+  <div class="field">
+    <%= f.label :extra_charge %>
+    <%= f.text_field :extra_charge %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hostel_id %>
+    <%= f.text_field :hostel_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

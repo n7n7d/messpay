@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from_date: 2016-07-21
+  to_date: 2016-07-21
+  exipry_date: 2016-07-21
+  amount: 1.5
+  payment_mode: MyString
+  is_paid: false
+  paid_amount: 1.5
+  resident: one
+
+two:
+  from_date: 2016-07-21
+  to_date: 2016-07-21
+  exipry_date: 2016-07-21
+  amount: 1.5
+  payment_mode: MyString
+  is_paid: false
+  paid_amount: 1.5
+  resident: two

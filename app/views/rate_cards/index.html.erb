@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rate Cards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Daily diet</th>
+      <th>Establishment charge</th>
+      <th>Maintenance charge</th>
+      <th>Staff welfare charge</th>
+      <th>Extra charge</th>
+      <th>Hostel</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rate_cards.each do |rate_card| %>
+      <tr>
+        <td><%= rate_card.daily_diet %></td>
+        <td><%= rate_card.establishment_charge %></td>
+        <td><%= rate_card.maintenance_charge %></td>
+        <td><%= rate_card.staff_welfare_charge %></td>
+        <td><%= rate_card.extra_charge %></td>
+        <td><%= rate_card.hostel %></td>
+        <td><%= link_to 'Show', rate_card %></td>
+        <td><%= link_to 'Edit', edit_rate_card_path(rate_card) %></td>
+        <td><%= link_to 'Destroy', rate_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rate Card', new_rate_card_path %>

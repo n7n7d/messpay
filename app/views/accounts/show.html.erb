@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fine:</strong>
+  <%= @account.fine %>
+</p>
+
+<p>
+  <strong>Leaves:</strong>
+  <%= @account.leaves %>
+</p>
+
+<p>
+  <strong>Last month adjustment:</strong>
+  <%= @account.last_month_adjustment %>
+</p>
+
+<p>
+  <strong>Resident:</strong>
+  <%= @account.resident %>
+</p>
+
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Back', accounts_path %>

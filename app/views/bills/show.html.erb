@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>From date:</strong>
+  <%= @bill.from_date %>
+</p>
+
+<p>
+  <strong>To date:</strong>
+  <%= @bill.to_date %>
+</p>
+
+<p>
+  <strong>Exipry date:</strong>
+  <%= @bill.exipry_date %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @bill.amount %>
+</p>
+
+<p>
+  <strong>Payment mode:</strong>
+  <%= @bill.payment_mode %>
+</p>
+
+<p>
+  <strong>Is paid:</strong>
+  <%= @bill.is_paid %>
+</p>
+
+<p>
+  <strong>Paid amount:</strong>
+  <%= @bill.paid_amount %>
+</p>
+
+<p>
+  <strong>Resident:</strong>
+  <%= @bill.resident %>
+</p>
+
+<%= link_to 'Edit', edit_bill_path(@bill) %> |
+<%= link_to 'Back', bills_path %>

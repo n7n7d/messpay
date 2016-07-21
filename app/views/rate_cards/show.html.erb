@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Daily diet:</strong>
+  <%= @rate_card.daily_diet %>
+</p>
+
+<p>
+  <strong>Establishment charge:</strong>
+  <%= @rate_card.establishment_charge %>
+</p>
+
+<p>
+  <strong>Maintenance charge:</strong>
+  <%= @rate_card.maintenance_charge %>
+</p>
+
+<p>
+  <strong>Staff welfare charge:</strong>
+  <%= @rate_card.staff_welfare_charge %>
+</p>
+
+<p>
+  <strong>Extra charge:</strong>
+  <%= @rate_card.extra_charge %>
+</p>
+
+<p>
+  <strong>Hostel:</strong>
+  <%= @rate_card.hostel %>
+</p>
+
+<%= link_to 'Edit', edit_rate_card_path(@rate_card) %> |
+<%= link_to 'Back', rate_cards_path %>

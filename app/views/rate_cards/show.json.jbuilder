@@ -1,0 +1,1 @@
+json.partial! "rate_cards/rate_card", rate_card: @rate_card
