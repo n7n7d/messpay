@@ -2,66 +2,320 @@
 @import "bootstrap";
 /* universal */
 
-body {
+
+#site-top-border {
+  background: #ff6600;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 2px;
+  top: 0;
+}
+/*///////////////////Side menu/////////////////*/
+
+.sidenav {
+  height: 100%;
+  width:200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right:0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d0e4f7+19,539fe1+97 */
+  background: rgb(208,228,247); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(208,228,247,1) 19%, rgba(83,159,225,1) 97%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(208,228,247,1) 19%,rgba(83,159,225,1) 97%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(208,228,247,1) 19%,rgba(83,159,225,1) 97%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e4f7', endColorstr='#539fe1',GradientType=0 ); /* IE6-9 */
+
+
+  overflow-x: hidden;
+  transition:0.3s;
   padding-top: 60px;
+
 }
 
-section {
-  overflow: auto;
+.sidenav a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 300;
+  color: #333333;
+  display: block;
+  transition: 0.3s;
+  outline: 0;
 }
 
-textarea {
-  resize: vertical;
+.sidenav ul{
+  list-style: none;
+  margin-left: 0px;
+  margin-top:30%;
 }
 
-.center {
+.sidenav a:hover, .offcanvas a:focus{
+  text-decoration: underline;
+
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 30px !important;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+#sidenav_logo{
+  margin-left: 10%;
+}
+#console{
+  padding-bottom: 2px;
+  border:1px solid #00ace6;
+  border-radius: 30px;
+  width: 70%;
+  margin-left: 10%;
+  margin-top: 20%;
+  padding-left: 10%;
+}
+
+/*////////////////////Menu icon/////////////////////*/
+
+.menu_icon{
+  border-radius: 3px;
+  border: 0px none;
+  display:inline-block;
+  margin-top: 30px;
+  cursor:pointer;
+  text-decoration: none !important;
   text-align: center;
+  width: 33px;
+  line-height: 34px;
+  font-size: 1.5em;
+  color:grey;
+  background: transparent none repeat scroll 0% 0%;
+}
+.menu_icon:hover{
+  background: #a6a6a6;
+  color:#FAFAFA;
+}
+/*////////////////////////Search Bar///////////////////*/
+#search_bar {
+  margin-top:7%;
+  margin-left:-15%;
+  width:79%;
+  height:78px;
+  font-size: 55px;
+  display: inline-block;
+  font-family: "Lato";
+  font-weight: 100;
+  border: none;
+  outline: none;
+  color: green;
+  position: absolute;
+  background: none;
+  cursor: pointer;
+  border-bottom: 1px solid #BBB;
+  padding: 0px;
+  padding-right: 60px;
 }
 
-.center h1 {
-  margin-bottom: 10px;
-}
-/* typography */
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
+#search_button{
+  height: 67px;
+  width: 63px;
+  margin-top:8%;
+  margin-left:63%;
+  background:url(index.png) center center no-repeat;
+  text-indent: -10000px;
+  border: none;
+  position:relative;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity .4s ease relative;
+}
+#search_button:hover {
+  opacity: 0.8;
 }
 
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
+/*Static_pages*/
+#developers_side_nav{
+  background: #e6e6e6;
+  position: fixed;
+  left: 0;
+  height:100%;
+  width:30%;
+  top: 0;
+  bottom:0;
 }
 
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
+.developers_pg{
+  font-size:40px;
+  font-family:"Andale Mono";
+  font-weight: 100;
+  color:#ff3300;
+  padding:3px;
+  height:15%;
+  font-style: bold;
+}
+#nischay_dev {
+  margin-top: 20%;
+}
+.developers_pg:hover{
+  background-color:#f2f2f2;
+}
+
+/*Error explanations*/
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.checkbox{
+  margin-left: 30px;
+}
+/* forms */
+
+.form-control {
+  border-radius: 0px;
+  border: 1px solid gray;
+  width: 60%;
+  margin-bottom: 15px;
+  background: inherit;
+}
+input {
+  height: auto !important;
+}
+.btn-primary{
+  border:none;
+  border-radius:0px;
+  background:#005ce6;
+}
+.btn-primary:hover{
+  background: #4d94ff;
+  border: none;
+}
+#login_form .form-control{
+  width:80%;
+  color: #595959;
+  background: inherit ;
+}
+#login_form {
+  margin-left: 10%;
+}
+#login_form a{
+  color: #383838 ;
+  text-decoration: none;
+  font-size: small;
+}
+.checkbox{
+  margin-left: 10%;
+}
+
+#login_form a:hover{
+  color:#0052cc;
+}
+/* This is for User Side List of menus*/
+#user_menu{
+  position: fixed;
+  top:10%;
+  padding: 5px 7px 5px 2px;
+}
+#user_menu a{
+  color:#989898 ;
+  cursor: pointer;
+  outline: none;
+  font-family: "Open Sans","lucida grande","Segoe UI",arial,verdana,"lucida sans unicode",tahoma,sans-serif;
+  font-size: 13px;
   font-weight: normal;
-  color: #777;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
-
-/* header */
-
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-}
-
-#logo:hover {
-  color: #fff;
   text-decoration: none;
 }
+#user_menu a:hover{
+  text-decoration: none;
+  color:#989898;
+}
+
+
+#user_menu li{
+  list-style: none;
+}
+#bottom_quate {
+  position: fixed;
+  bottom:0px;
+  font-family: "Open Sans","lucida grande","Segoe UI",arial,verdana,"lucida sans unicode",tahoma,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  color:#ff4d88 ;
+
+}
+.hostel_image{
+  position: fixed;
+  bottom:30%;
+}
+.col-md-5{
+  margin-top:0%;
+}
+.Leave_lable {
+  font-family: "Open Sans", "lucida grande", "Segoe UI", arial, verdana, "lucida sans unicode", tahoma, sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  color: #989898;
+}
+#leave_img{
+  margin-left: 90%;
+  position: relative;
+  top:0;
+}
+/////////
+/* leaves */
+
+.leaves {
+  list-style: none;
+  padding: 0;
+  li{
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+.destination {
+  font-weight: 200;
+  font-size: 30px;
+  margin-top: 5em;
+  padding-top: 0;
+}
+
+.timestamp {
+  font-weight: 200;
+  color: darkgrey;
+  display: block;
+}
+.leave_range{
+  padding-top: 5px;
+  font-weight: 200;
+  font-size: 20px;
+  color:blueviolet;
+  display: block;
+
+}
+#leaves_button a{
+  outline:none;
+  margin-bottom: 90%;
+  font-size: 15px;
+  text-decoration: none;
+  color:white;
+}
+
+

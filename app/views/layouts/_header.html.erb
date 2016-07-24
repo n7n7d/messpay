@@ -1,15 +1,72 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "sample app", '#', id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   '#' %></li>
-        <li><%= link_to "Help",   '#' %></li>
-        <li><%= link_to "Signup", new_user_registration_path %></li>
-        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-        <li><%= link_to "Login", new_user_session_path %></li>
+<div class="container-fluid" id="site-top-border">
+  <div class="col-xs-2 col-xs-offset-10">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-1 col-md-offset-8">
+          <a  class="menu_icon" onclick="openNav()">☰</a>
+          <p style='font-size:15px;font-weight:200;text-align:right;margin-top: 0px;'>Menu</p>
+        </div>
+      </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"style="text-decoration: none;">×</a>
+      <%= image_tag("899762fd9fd17504.gif", alt: "Messpay",height: "38",width: "120",id:"sidenav_logo") %><br>
+      <% if user_signed_in? %>
+          <div id="console">
+            <%= link_to(current_user) do %>
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Profile
+            <% end %>
 
+            <%= link_to(edit_user_password_path ) do %>
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Settings
+            <% end %>
+            <%= link_to(destroy_user_session_path , method: "delete") do %>
+                <span class="glyphicon glyphicon-off"></span>Logout
+            <%end%>
+          </div>
+      <% else %>
+          <p style='font-size:20px;font-weight:200;margin-left: 20%;color: grey;margin-left: 10%;margin-top: 5%;'>Login</p>
+
+          <div id="login_form">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <%= f.email_field :email, class: 'form-control',placeholder:"Email",autofocus:true %>
+
+                <%= link_to "(Forgot password)", "#" %>
+                <%= f.password_field :password, class: 'form-control',placeholder:"Password" %>
+                <% if devise_mapping.rememberable? -%>
+          <%= f.label :remember_me, class: "checkbox inline" do %>
+                    <%= f.check_box :remember_me %>
+                    <span style="font-weight: 200;">Keep me signed in </span>
+                    <% end %>
+                <% end -%>
+
+                <%= f.submit "Log in", class: "btn btn-primary" %>
+            <% end %>
+            <br>
+            <p style="font-weight: 200">New user? <%= link_to "Register now",   new_user_registration_path %></p>
+          </div>
+
+      <% end %>
+      <ul>
+        <p style='font-size:20px;font-weight:200;text-align: left'>Who we are</p>
+        <li> <%=link_to "About",about_path%></li>
+        <li> <%=link_to "Developers",developers_path%></li>
+        <hr style="width: 50%;margin-left:0px">
+        <p style='font-size:20px;font-weight:200;text-align: left'>Getting help</p>
+        <li> <%=link_to "Contact",contact_path%></li>
+        <li> <%=link_to "Help",help_path%></li>
       </ul>
-    </nav>
+    </div>
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+      closeNav();
+    </script>
+
   </div>
-</header>
+</div>

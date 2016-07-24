@@ -1,34 +1,29 @@
-<h2>Sign up</h2>
+
+<% provide(:title, 'Sign up for a free messpay account') %>
+<div class="row">
+  <div class="col-xs-5 col-xs-offset-2" style="margin-top: 10%">
+    <%= image_tag("signup.jpg", alt: "Thapar",width:"475",height: "331",class:"img-responsive") %>
+
+  </div >
+  <div class="col-xs-5" id="signup_form" style="margin-top: 10%">
+    <%= image_tag("messpay.gif", alt: "Messpay",height: "38",width: "120") %>
+
+    <p style="font-size:30px;font-weight:100;"> Create an account </p>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+        <p style="font-size: 0.87em">Messpay account <%= link_to "What's this?","#" %></p>
+  <%= f.text_field :roll_number, class:'form-control',placeholder:"Roll number" %>
 
-    <div class="field">
-      <%= f.label :roll_number %><br />
-      <%= f.text_field :roll_number%>
-    </div>
+  <%= f.email_field :email, class:'form-control',placeholder:"Email" %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <%= f.password_field :password, class:'form-control',placeholder:"Password"%>
+
+  <%= f.password_field :password_confirmation, class: 'form-control',placeholder:"Password confirmation"%>
+
+  <%= f.submit "Create account", class: "btn btn-primary" %>
+  <% end %>
+  <p style="margin-top: 10%;color: gray;">Already have Messpay account<span onclick="openNav()"style="color:#0c90db;cursor:pointer;"> Login here !!</span></p>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
